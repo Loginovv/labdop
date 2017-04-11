@@ -80,4 +80,16 @@
 
 ![10](/images/10.png)
 
-[тык](https://access.redhat.com/solutions/1592413)
+[тык](https://access.redhat.com/solutions/1592413) [тык2](https://bugzilla.redhat.com/show_bug.cgi?id=1404444)
+
+*командой ifconfig выведем параметры сетевых интерфейсов*
+
+>ifconfig
+
+![11](/images/11.png)
+
+*командой route выведем статические маршруты сети*
+
+>route
+
+![12](/images/12.png)
