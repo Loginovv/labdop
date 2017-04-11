@@ -115,3 +115,26 @@
 >chmod 777 my.sh
 
 ![13](/images/13.png)
+
+### Создание образа и загрузка в репозиторий
+
+*командой login подключаемся к своему репозиторию*
+
+>docker login
+>username
+>password
+
+*командой commit создаём образ контейнера*
+
+>docker commit [cont_name] [your_rep]
+
+*командой push загружаем образ в репозиторий*
+
+>docker push [your_rep]
+
+![14](/images/14.png)
+
+###Вывод
+
+
+
