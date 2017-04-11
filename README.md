@@ -63,3 +63,21 @@
 >journalctl
 
 ![7](/images/7.png)
+
+*командой timedatectl проверим настройку времени, даты и временной зоны*
+
+>timedatectl status
+
+![8](/images/8.png)
+
+*командой systemctl list-unit-files выполняется просмотр сервисов*
+
+>systemctl list-unit-files
+
+![9](/images/9.png)
+
+нет работающего сервиса network 
+
+![10](/images/10.png)
+
+[тык](https://access.redhat.com/solutions/1592413)
