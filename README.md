@@ -28,4 +28,25 @@
 
 ![4](/images/4.png)
 
-## Создание контейнера
+### Создание контейнера
+
+*командой docker run создаём контейнер из репозитория и запускаем его*
+
+>docker run -d -t --privileged -h lxc21 --name lab01 vlavad/lab00
+
+*командой docker ps проверяем установку и статус*
+
+>docker ps -a
+
+*командой docker exec входим в контейнер*
+
+>docker exec -i -t lab<NN> /bin/bash
+
+![5](/images/5.png)
+
+*для остановки контейнера используеся команда poweroff от пользователя root*
+
+*для запуска контейнера используется команда docker start [имя контейнера]*
+
+![6](/images/6.png)
+![7](/images/7.png)
