@@ -16,6 +16,10 @@
 
 # или просто устанавливаем DockerToolbox
 
+*также для того чтобы запускать докер из Windows cmd необходимо выполнить команду:*
+
+>setx path "%path%;C:\Users\[User]\bin" /M
+
 *командой create создаём новую машину.*
 
 >docker-machine create [имя машины]
@@ -48,11 +52,11 @@
 
 >eval $("C:\Users\[User]\bin\docker-machine.exe" env new)
 
-(команда копируется из docker-machine env [name] )
+(команда копируется из docker-machine env [name] последняя строка)
 
 ![15](/images/15.png)
 
-*дальше просто используем команды docker*
+*и дальше просто используем команды docker*
 
 ### Создание контейнера
 
@@ -69,6 +73,12 @@
 >docker exec -i -t lab<NN> /bin/bash
 
 ![5](/images/5.png)
+
+данная команда работает в cmd, но в git bash (при использовании машины без подключения по ssh) нужно модифицировать команду:
+
+>winpty docker exec -it l1 bash
+
+![16](/images/16.png)
 
 *для остановки контейнера используеся команда poweroff от пользователя root*
 
@@ -105,8 +115,6 @@
 нет работающего сервиса network 
 
 ![10](/images/10.png)
-
-[тык](https://access.redhat.com/solutions/1592413) [тык2](https://bugzilla.redhat.com/show_bug.cgi?id=1404444)
 
 *командой ifconfig выведем параметры сетевых интерфейсов*
 
