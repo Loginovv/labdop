@@ -4,11 +4,21 @@
 
 *С помощью git bash устанавливаем докер машину.*
 
->if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi && \
->curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" && \
->chmod +x "$HOME/bin/docker-machine.exe"
+>if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi && \   --Если в домашнем каталоге нет папки bin создаём её
+>curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" && \ --скачиваем файл с указанием в какую папку скачать и как назвать
+>chmod +x "$HOME/bin/docker-machine.exe"  --даём права на запуск
   
 ![1](/images/1.png)
+
+по [ссылке](https://get.docker.com/builds/Windows/x86_64/docker-17.04.0-ce.zip) или выбрав [версию](https://github.com/docker/docker/releases) скачиваем клиент docker, кладём файл docker.exe в папку с docker-machine и выполняем команду
+
+>chmod +x "$HOME/bin/docker.exe"
+
+# или просто устанавливаем DockerToolbox
+
+*также для того чтобы запускать докер из Windows cmd необходимо выполнить команду:*
+
+>setx path "%path%;C:\Users\[User]\bin" /M
 
 *командой create создаём новую машину.*
 
@@ -22,11 +32,31 @@
 
 ![3](/images/3.png)
 
+команда start запускает машину
+>docker-machine start [name] 
+
+команда stop запускает машину
+>docker-machine stop [name] 
+
+## Вариант 1
+
 *командой ssh подключаемся к ней*
 
 >docker-machine ssh [имя машины]
 
 ![4](/images/4.png)
+
+## Вариант 2
+
+командой eval активируем окружение машины
+
+>eval $("C:\Users\[User]\bin\docker-machine.exe" env new)
+
+(команда копируется из docker-machine env [name] последняя строка)
+
+![15](/images/15.png)
+
+*и дальше просто используем команды docker*
 
 ### Создание контейнера
 
@@ -43,6 +73,12 @@
 >docker exec -i -t lab<NN> /bin/bash
 
 ![5](/images/5.png)
+
+данная команда работает в cmd, но в git bash (при использовании машины без подключения по ssh) нужно модифицировать команду:
+
+>winpty docker exec -it l1 bash
+
+![16](/images/16.png)
 
 *для остановки контейнера используеся команда poweroff от пользователя root*
 
@@ -79,8 +115,6 @@
 нет работающего сервиса network 
 
 ![10](/images/10.png)
-
-[тык](https://access.redhat.com/solutions/1592413) [тык2](https://bugzilla.redhat.com/show_bug.cgi?id=1404444)
 
 *командой ifconfig выведем параметры сетевых интерфейсов*
 
