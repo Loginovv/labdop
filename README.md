@@ -14,7 +14,7 @@
 
 >chmod +x "$HOME/bin/docker.exe"
 
-# или просто устанавливаем DockerToolbox
+### или просто устанавливаем DockerToolbox
 
 *также для того чтобы запускать докер из Windows cmd необходимо выполнить команду:*
 
