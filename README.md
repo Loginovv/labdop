@@ -18,7 +18,7 @@
 
 *также для того чтобы запускать докер из Windows cmd необходимо выполнить команду:*
 
->setx path "%path%;C:\Users\[User]\bin" /M
+>setx path "%path%;C:\Users\\[User]\bin" /M
 
 *командой create создаём новую машину.*
 
