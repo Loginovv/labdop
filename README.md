@@ -4,9 +4,9 @@
 
 *С помощью git bash устанавливаем докер машину.*
 
->if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi && \   --Если в домашнем каталоге нет папки bin создаём её
->curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" && \ --скачиваем файл с указанием в какую папку скачать и как назвать
->chmod +x "$HOME/bin/docker-machine.exe"  --даём права на запуск
+    if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi && \   --Если в домашнем каталоге нет папки bin создаём её
+    curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" && \ --скачиваем файл с указанием в какую папку скачать и как назвать
+    chmod +x "$HOME/bin/docker-machine.exe"  --даём права на запуск
   
 ![1](/images/1.png)
 
